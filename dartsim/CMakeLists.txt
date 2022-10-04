@@ -24,6 +24,15 @@ ign_add_component(${engine_name}
   DEPENDS_ON_COMPONENTS dartsim
   GET_TARGET_NAME dartsim_plugin)
 
+  
+  set_target_properties(${features} PROPERTIES MAP_IMPORTED_CONFIG_RELWITHDEBINFO RELEASE)
+  set_target_properties(${DART_LIBRARIES} PROPERTIES MAP_IMPORTED_CONFIG_RELWITHDEBINFO RELEASE)
+  set_target_properties(fcl PROPERTIES MAP_IMPORTED_CONFIG_RELWITHDEBINFO RELEASE)
+  set_target_properties(octomap PROPERTIES MAP_IMPORTED_CONFIG_RELWITHDEBINFO RELEASE)
+  set_target_properties(octomath PROPERTIES MAP_IMPORTED_CONFIG_RELWITHDEBINFO RELEASE)
+  
+  set_target_properties(${dartsim_plugin} PROPERTIES MAP_IMPORTED_CONFIG_RELWITHDEBINFO RELEASE)
+    
 target_link_libraries(${dartsim_plugin}
   PUBLIC
     ${features}
